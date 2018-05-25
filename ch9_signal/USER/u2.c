@@ -1,7 +1,7 @@
 #include "ucode.c"
 
 // It works because the function changed bx in mysterious way
-// as the assembly code is "idiv bx"
+// as the divide-zero's assembly code is "idiv bx"
 void divide_zero_handler(int i){
 	printf("Umode: divide by zero handler is running...\n");
 	printf("signum is %d\n", i);
