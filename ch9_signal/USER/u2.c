@@ -1,8 +1,7 @@
 #include "ucode.c"
 
 // It works and I DON"T KNOW WHY
-// the divide-zero's assembly code is "idiv bx"
-// the "right" way is write an assembly function divide_zero_handler, and change bx into something not zero by yourself.
+// see the README.txt
 void divide_zero_handler(int i){
 	printf("Umode: divide by zero handler is running...\n");
 	printf("signum is %d\n", i);
