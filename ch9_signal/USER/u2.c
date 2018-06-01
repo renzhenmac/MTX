@@ -1,11 +1,8 @@
 #include "ucode.c"
 
-// It works and I DON"T KNOW WHY
+// i is changed because it's in uPS+13 in the umode stack, where sig# is inserted as Figure 9.2 shows in the book
 // see the README.txt
-void divide_zero_handler(int i){
-	printf("Umode: divide by zero handler is running...\n");
-	printf("signum is %d\n", i);
-}
+extern void divide_zero_handler();
 
 int main(void){
 	int i = 9, j = 0, k;
@@ -15,7 +12,7 @@ int main(void){
 	printf("Umode: going to divide zero\n");
 	k = i / j;
 	printf("Umode: line after divided zero, should not see me ;-)\n");
-	printf("Umode: k is %d, which is meaningless \n", k);
+	printf("Umode: i is %d now \n", i);
 	printf("Umode: U2 calling exit(0) byebye \n");	
 	exit(0);
 }
